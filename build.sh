@@ -17,9 +17,7 @@
  #
 KERNEL_DIR=$PWD
 ZIP_DIR=$KERNEL_DIR/AnyKernel2
-KERN_IMG=$KERNEL_DIR/arch/arm/boot/zImage
-DT_IMG=$KERNEL_DIR/arch/arm/boot/dt.img
-DTBTOOL=$KERNEL_DIR/tools/dtbToolCM
+KERN_IMG=$KERNEL_DIR/arch/arm/boot/zImage-dtb
 BUILD_START=$(date +"%s")
 blue='\033[0;34m'
 cyan='\033[0;36m'
@@ -27,21 +25,19 @@ yellow='\033[0;33m'
 red='\033[0;31m'
 nocol='\033[0m'
 # Modify the following variable if you want to build
-export CROSS_COMPILE="/home/saiko94/kernel/arm-unknown-linux-gnueabi/bin/arm-unknown-linux-gnueabi-"
+export CROSS_COMPILE="~/kernel/tc/uber/bin/arm-eabi-"
 export ARCH=arm
 export SUBARCH=arm
-export KBUILD_BUILD_USER="ashish.m"
-export KBUILD_BUILD_HOST="DespairInc."
-make zetsubou_defconfig
-make -j5
+export KBUILD_BUILD_USER="lolmaxlik"
+export KBUILD_BUILD_HOST="SmartRomTeam"
+make zetsubou_crackling_defconfig
+make zImage-dtb -j3
 
-$DTBTOOL -2 -o $KERNEL_DIR/arch/arm/boot/dt.img -s 2048 -p $KERNEL_DIR/scripts/dtc/ $KERNEL_DIR/arch/arm/boot/dts/
 echo -e "$blue***********************************************"
 echo "          creating flashable zip          "
 echo -e "***********************************************$nocol"
 cd $ZIP_DIR
 make clean
-cp $DT_IMG $ZIP_DIR/dtb
 cp $KERN_IMG $ZIP_DIR
 make
 BUILD_END=$(date +"%s")
