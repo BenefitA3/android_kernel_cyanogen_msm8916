@@ -15,11 +15,10 @@ before_install:
   # - sudo apt-get update -qq
   
   # downloading the best version of the linaro toolchain. 
-  - git clone https://bitbucket.org/UBERTC/arm-eabi-4.9.git
-  - export PATH=$PATH:$PWDarm-eabi-4.9/bin/
+  - git clone https://bitbucket.org/UBERTC/arm-eabi-4.8.git
+  - export PATH=$PATH:$PWDarm-eabi-4.8/bin/
   
   - sudo apt-get install bc
-  - sudo apt-get install libmpc-dev
 
 
 #######################################################################################
@@ -35,10 +34,10 @@ before_script:
 
 
 script:
-  - export KBUILD_BUILD_USER=assusdan
-  - export KBUILD_BUILD_HOST=SRT
+  - export KBUILD_BUILD_USER=lolmaxlik
+  - export KBUILD_BUILD_HOST=SmartRomTeam
   - export ARCH=arm 
-  - export CROSS_COMPILE=$PWD/arm-eabi-4.9/bin/arm-eabi-
+  - export CROSS_COMPILE=$PWD/arm-eabi-4.8/bin/arm-eabi-
   
   - make zetsubou_peach_defconfig
   - make zImage-dtb -j5
