@@ -9,6 +9,7 @@ before_script:
   - export DST_PROJECT=$PWD
 
 script:
+  - git clone https://bitbucket.org/UBERTC/arm-eabi-4.9.git
   - export KBUILD_BUILD_USER=lolmaxlik
   - export KBUILD_BUILD_HOST=SmartRomTeam
   - export ARCH=arm 
