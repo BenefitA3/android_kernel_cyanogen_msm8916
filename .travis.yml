@@ -20,6 +20,7 @@ before_install:
   
   - sudo apt-get install bc
   - sudo apt-get install libmpc-dev
+  - sudo ln -s /opt/pkg/mpc1.0.1/lib/libmpc.so.3.0.0 /opt/pkg/mpc1.0.1/lib/libmpc.so.3
 
 
 #######################################################################################
