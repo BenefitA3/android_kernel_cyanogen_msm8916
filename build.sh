@@ -30,7 +30,7 @@ export ARCH=arm
 export SUBARCH=arm
 export KBUILD_BUILD_USER="lolmaxlik"
 export KBUILD_BUILD_HOST="SmartRomTeam"
-make zetsubou_crackling_defconfig
+make zetsubou_peach_defconfig
 make zImage-dtb -j3
 
 echo -e "$blue***********************************************"
