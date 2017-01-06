@@ -17,7 +17,6 @@ before_install:
   # downloading the best version of the linaro toolchain. 
   - git clone https://bitbucket.org/UBERTC/arm-eabi-4.9.git
   - export PATH=$PATH:$PWDarm-eabi-4.9/bin/
-  - arm-eabi-gcc --version
   
   - sudo apt-get install bc
 
