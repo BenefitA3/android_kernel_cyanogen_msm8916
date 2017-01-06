@@ -1,38 +1,12 @@
 language: c
-
-#######################################################################################
-
-
 os:
   - linux
 
-
-#######################################################################################
-
-
 before_install:
-
-  # - sudo apt-get update -qq
-  
-  # downloading the best version of the linaro toolchain. 
-  - git clone https://bitbucket.org/UBERTC/arm-eabi-4.9.git
-  - export PATH=$PATH:$PWD/arm-eabi-4.9/bin/
-  - arm-cortex-linux-gnueabi-gcc --version
-  
-  - sudo apt-get install bc
-
-
-#######################################################################################
-
 
 before_script:
 
   - export DST_PROJECT=$PWD
-  # download and extract the linux source code.
-
-
-#######################################################################################
-
 
 script:
   - export KBUILD_BUILD_USER=lolmaxlik
