@@ -19,6 +19,7 @@ before_install:
   - export PATH=$PATH:$PWDarm-eabi-4.9/bin/
   
   - sudo apt-get install bc
+  - sudo apt-get install libmpc-dev
 
 
 #######################################################################################
